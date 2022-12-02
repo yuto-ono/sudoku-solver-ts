@@ -22,7 +22,7 @@ export type SolveStatus = typeof SolveStatus[keyof typeof SolveStatus]
 /**
  * ソルブ成功したときの戻り値
  */
-export type SolveAnswer = {
+export type SolveSuccess = {
   success: true
   solution: number[]
 }
@@ -35,7 +35,7 @@ export type SolveFailed = {
   status: SolveStatus
 }
 
-export type SolveResult = SolveAnswer | SolveFailed
+export type SolveResult = SolveSuccess | SolveFailed
 
 const emptyList = new EmptyList()
 const cells = [...Array(CELL_NUMBER)].map((_, i) => new Cell(i))
