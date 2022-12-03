@@ -49,6 +49,9 @@ if (result.success) {
     case SolveStatus.unsolvable:
       console.error("解けませんでした。")
       break
+    case SolveStatus.outOfRange:
+      console.error("0-9 の整数ではない要素があります。")
+      break
   }
 }
 ```
