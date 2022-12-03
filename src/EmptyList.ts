@@ -1,7 +1,8 @@
 import { Cell } from "./Cell"
+import { COL_NUM } from "./constants"
 
 // 最小の要素を探すための初期値
-const MIN_LENGTH_INITIAL = 10
+const MIN_LENGTH_INITIAL = COL_NUM + 1
 
 /**
  * 空きマスリスト

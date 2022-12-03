@@ -1,6 +1,4 @@
-const CHUNK_NUM = 3
-const COL_NUM = 9
-
+import { CHUNK_NUM, COL_NUM } from "./constants"
 // 1-9 すべて候補に上がっている状態の candidates
 // ビットで候補を管理している（2進数で 1111111110）
 const DEFAULT_CANDIDATES = 0x3fe

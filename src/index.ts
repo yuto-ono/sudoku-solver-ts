@@ -1,7 +1,6 @@
 import { Cell } from "./Cell"
+import { CELL_NUMBER, COL_NUM } from "./constants"
 import { EmptyList } from "./EmptyList"
-
-const CELL_NUMBER = 81
 
 /**
  * ソルブ失敗時の種別
@@ -15,6 +14,7 @@ export const SolveStatus = {
   noEmpty: 2,
   duplicated: 3,
   unsolvable: 4,
+  outOfRange: 5,
 } as const
 
 export type SolveStatus = typeof SolveStatus[keyof typeof SolveStatus]
@@ -37,6 +37,7 @@ export type SolveFailed = {
 
 export type SolveResult = SolveSuccess | SolveFailed
 
+const validNumList = [...Array(COL_NUM + 1)].map((_, i) => i)
 const emptyList = new EmptyList()
 const cells = [...Array(CELL_NUMBER)].map((_, i) => new Cell(i))
 cells.forEach((cell) => cell.setRelatedCells(cells))
@@ -55,6 +56,9 @@ export const solve = (numArray: number[]): SolveResult => {
   emptyList.clear()
   for (const cell of cells) {
     const num = numArray[cell.pos]
+    if (!validNumList.includes(num)) {
+      return { success: false, status: SolveStatus.outOfRange }
+    }
     if (num === 0) {
       emptyList.push(cell)
     } else if (!cell.setNum(num)) {

@@ -7,6 +7,9 @@ import {
   answer2,
   duplicated,
   unsolvable,
+  outOfRange1,
+  outOfRange2,
+  outOfRange3,
 } from "./samples.json"
 
 describe("Solver", () => {
@@ -43,6 +46,27 @@ describe("Solver", () => {
     expect(result.success).toBe(false)
     if (!result.success) {
       expect(result.status).toBe(SolveStatus.unsolvable)
+    }
+  })
+  it("out of range 1", () => {
+    const result = solve(outOfRange1.flat())
+    expect(result.success).toBe(false)
+    if (!result.success) {
+      expect(result.status).toBe(SolveStatus.outOfRange)
+    }
+  })
+  it("out of range 2", () => {
+    const result = solve(outOfRange2.flat())
+    expect(result.success).toBe(false)
+    if (!result.success) {
+      expect(result.status).toBe(SolveStatus.outOfRange)
+    }
+  })
+  it("out of range 3", () => {
+    const result = solve(outOfRange3.flat())
+    expect(result.success).toBe(false)
+    if (!result.success) {
+      expect(result.status).toBe(SolveStatus.outOfRange)
     }
   })
 })

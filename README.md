@@ -65,3 +65,5 @@ if (result.success) {
     - 空白のマスが1つもない場合（解く必要がない）
   - SolveStatus.unsolvable (4)
     - 解けなかった（解なし）
+  - SolveStatus.outOfRange (5)
+    - 配列の要素に 0-9 の整数以外の値が含まれる
