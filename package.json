@@ -1,6 +1,6 @@
 {
   "name": "sudoku-solver-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "世界最速（多分）の TypeScript製 数独ソルバー",
   "homepage": "https://github.com/yuto-ono/sudoku-solver-ts#readme",
   "files": [
