@@ -85,7 +85,7 @@ const solveRecursive = (): boolean => {
   const cell = emptyList.pop()
 
   // 候補に上がっている数字を入れてみる
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= COL_NUM; i++) {
     if (cell.setNum(i)) {
       if (emptyList.length === 0 || solveRecursive()) {
         return true
