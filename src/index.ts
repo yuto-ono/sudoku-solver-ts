@@ -8,6 +8,7 @@ import { EmptyList } from "./EmptyList"
  * noEmpty 空きマスがない
  * duplicated 重複がある
  * unsolvable 解けない
+ * outOfRange 0-9 の整数以外の値が含まれる
  */
 export const SolveStatus = {
   invalidLength: 1,
