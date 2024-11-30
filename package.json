@@ -16,7 +16,7 @@
     "test": "jest",
     "build": "npm run declaration && npm run esbuild",
     "esbuild": "esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm",
-    "declaration": "tsc && find dist -name '*.d.ts' ! -name 'index.d.ts' | xargs rm",
+    "declaration": "tsc && find dist -name '*.d.ts' ! -name 'index.d.ts' -delete",
     "prepublish": "npm run test && npm run build"
   },
   "author": "Yuto Ono",

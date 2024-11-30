@@ -11,4 +11,5 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
+  "include": ["src/index.ts"]
 }
